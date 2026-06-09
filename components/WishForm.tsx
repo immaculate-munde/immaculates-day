@@ -54,12 +54,12 @@ export default function WishForm() {
             🎀
           </motion.span>
           <p
-            className="text-2xl text-pink-600 text-center"
-            style={{ fontFamily: 'var(--font-dancing)' }}
+            className="text-2xl text-center"
+            style={{ color: '#4A6B3A', fontFamily: 'var(--font-dancing)' }}
           >
             Your wish has been sent with love!
             <br />
-            <span className="text-lg text-pink-400">Taking you to the board... ✨</span>
+            <span className="text-lg" style={{ color: '#8A9E7A' }}>Taking you to the board... ✨</span>
           </p>
         </motion.div>
       ) : (
@@ -71,20 +71,19 @@ export default function WishForm() {
           onSubmit={handleSubmit}
           className="w-full max-w-md mx-auto flex flex-col gap-5"
           style={{
-            background: 'rgba(255, 255, 255, 0.55)',
+            background: 'rgba(255, 255, 252, 0.58)',
             backdropFilter: 'blur(16px)',
             WebkitBackdropFilter: 'blur(16px)',
-            border: '1.5px solid rgba(255, 182, 193, 0.5)',
+            border: '1.5px solid rgba(160, 190, 140, 0.45)',
             borderRadius: '20px',
             padding: '2rem',
-            boxShadow: '0 8px 40px rgba(220, 120, 160, 0.15)',
+            boxShadow: '0 8px 40px rgba(100, 150, 90, 0.12)',
           }}
         >
           <div className="flex flex-col gap-1.5">
             <label
               htmlFor="name"
-              className="text-sm text-pink-500 pl-1"
-              style={{ fontFamily: 'var(--font-dancing)', fontSize: '1.1rem' }}
+              style={{ fontFamily: 'var(--font-dancing)', fontSize: '1.1rem', color: '#5A8A50' }}
             >
               Your name ✨
             </label>
@@ -97,16 +96,16 @@ export default function WishForm() {
               placeholder="e.g. Sarah"
               className="w-full px-4 py-2.5 rounded-xl outline-none text-gray-700 placeholder-pink-200 text-sm transition-all duration-200"
               style={{
-                background: 'rgba(255,240,245,0.8)',
-                border: '1.5px solid rgba(255,182,193,0.4)',
+                background: 'rgba(240,248,236,0.8)',
+                border: '1.5px solid rgba(160,190,140,0.4)',
                 fontFamily: 'var(--font-dancing)',
                 fontSize: '1rem',
               }}
               onFocus={(e) =>
-                (e.target.style.border = '1.5px solid rgba(220, 100, 150, 0.7)')
+                (e.target.style.border = '1.5px solid rgba(100,150,80,0.7)')
               }
               onBlur={(e) =>
-                (e.target.style.border = '1.5px solid rgba(255,182,193,0.4)')
+                (e.target.style.border = '1.5px solid rgba(160,190,140,0.4)')
               }
             />
           </div>
@@ -114,8 +113,7 @@ export default function WishForm() {
           <div className="flex flex-col gap-1.5">
             <label
               htmlFor="message"
-              className="text-sm text-pink-500 pl-1"
-              style={{ fontFamily: 'var(--font-dancing)', fontSize: '1.1rem' }}
+              style={{ fontFamily: 'var(--font-dancing)', fontSize: '1.1rem', color: '#5A8A50' }}
             >
               Your birthday wish 💌
             </label>
@@ -128,20 +126,20 @@ export default function WishForm() {
               placeholder="Write something sweet..."
               className="w-full px-4 py-2.5 rounded-xl outline-none text-gray-700 placeholder-pink-200 text-sm resize-none transition-all duration-200"
               style={{
-                background: 'rgba(255,240,245,0.8)',
-                border: '1.5px solid rgba(255,182,193,0.4)',
+                background: 'rgba(240,248,236,0.8)',
+                border: '1.5px solid rgba(160,190,140,0.4)',
                 fontFamily: 'var(--font-dancing)',
                 fontSize: '1rem',
                 lineHeight: '1.6',
               }}
               onFocus={(e) =>
-                (e.target.style.border = '1.5px solid rgba(220, 100, 150, 0.7)')
+                (e.target.style.border = '1.5px solid rgba(100,150,80,0.7)')
               }
               onBlur={(e) =>
-                (e.target.style.border = '1.5px solid rgba(255,182,193,0.4)')
+                (e.target.style.border = '1.5px solid rgba(160,190,140,0.4)')
               }
             />
-            <span className="text-xs text-pink-300 text-right pr-1">
+            <span className="text-xs text-right pr-1" style={{ color: '#A8B898' }}>
               {message.length}/280
             </span>
           </div>
@@ -152,8 +150,8 @@ export default function WishForm() {
                 initial={{ opacity: 0, y: -6 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                className="text-sm text-rose-400 text-center"
-                style={{ fontFamily: 'var(--font-dancing)', fontSize: '1rem' }}
+                className="text-sm text-center"
+                style={{ color: '#B06858', fontFamily: 'var(--font-dancing)', fontSize: '1rem' }}
               >
                 {error}
               </motion.p>
@@ -167,8 +165,8 @@ export default function WishForm() {
             whileTap={{ scale: 0.97 }}
             className="w-full py-3 rounded-xl text-white font-semibold text-base tracking-wide transition-opacity disabled:opacity-60"
             style={{
-              background: 'linear-gradient(135deg, #f472b6, #e879a0, #db6895)',
-              boxShadow: '0 4px 20px rgba(220, 100, 150, 0.4)',
+              background: 'linear-gradient(135deg, #7AAE6A, #5A9A50, #4A8A42)',
+              boxShadow: '0 4px 20px rgba(90, 154, 80, 0.35)',
               fontFamily: 'var(--font-dancing)',
               fontSize: '1.15rem',
               letterSpacing: '0.04em',

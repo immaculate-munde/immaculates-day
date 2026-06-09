@@ -2,12 +2,12 @@ import { NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 
 const NOTE_COLORS = [
-  '#FFD6E0', // rose
-  '#FFE4CC', // peach
-  '#EDD9F7', // lilac
-  '#FFF5C3', // butter
-  '#FADADD', // blush
-  '#D8F5E8', // mint
+  '#EDF3E8', // sage
+  '#FBF0E4', // warm cream
+  '#F5E3DC', // dusty rose
+  '#EAE0F0', // soft lavender
+  '#FBF5DC', // butter
+  '#E4EEF5', // misty blue
 ]
 
 export async function GET() {

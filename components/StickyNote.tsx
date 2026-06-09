@@ -66,14 +66,14 @@ export default function StickyNote({
         rotate: 0,
         y: yOffset - 14,
         zIndex: 50,
-        boxShadow: '0 16px 48px rgba(220, 100, 150, 0.45), 0 0 0 2px rgba(255,182,193,0.6)',
+        boxShadow: '0 16px 48px rgba(100, 150, 80, 0.35), 0 0 0 2px rgba(160,200,140,0.55)',
         transition: { duration: 0.18 },
       }}
       style={{
         backgroundColor: color,
         boxShadow: editing
-          ? '0 20px 60px rgba(220, 100, 150, 0.35), 0 0 0 2px rgba(255,150,180,0.5)'
-          : '3px 6px 18px rgba(180, 80, 120, 0.18), 0 0 0 1px rgba(0,0,0,0.04)',
+          ? '0 20px 60px rgba(100, 150, 80, 0.3), 0 0 0 2px rgba(160,200,140,0.5)'
+          : '3px 6px 18px rgba(80, 110, 60, 0.15), 0 0 0 1px rgba(0,0,0,0.04)',
         position: 'relative',
         zIndex: editing ? 100 : 1,
         cursor: editing ? 'default' : 'pointer',
@@ -84,7 +84,7 @@ export default function StickyNote({
       <div
         className="absolute top-2 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full"
         style={{
-          background: 'radial-gradient(circle at 35% 35%, #f9a8c9, #c06080)',
+          background: 'radial-gradient(circle at 35% 35%, #B8D8A8, #6A9A58)',
           boxShadow: '0 1px 4px rgba(0,0,0,0.25)',
         }}
       />
@@ -103,7 +103,7 @@ export default function StickyNote({
           onClick={handleEdit}
           className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-150 text-base leading-none p-0.5 rounded hover:scale-110 active:scale-95"
           title="Edit this wish"
-          style={{ color: '#c06080' }}
+          style={{ color: '#6A9A58' }}
         >
           ✏️
         </button>
@@ -153,7 +153,7 @@ export default function StickyNote({
                 disabled={saving}
                 className="flex-1 text-xs py-1 rounded-md text-white transition-opacity disabled:opacity-60"
                 style={{
-                  background: 'linear-gradient(135deg, #f472b6, #db6895)',
+                  background: 'linear-gradient(135deg, #7AAE6A, #4A8A42)',
                   fontFamily: 'var(--font-dancing-script)',
                   fontSize: '0.85rem',
                 }}
@@ -190,7 +190,7 @@ export default function StickyNote({
             </p>
             <p
               className="text-sm mt-3 text-right"
-              style={{ fontFamily: 'var(--font-dancing-script)', color: '#b05070' }}
+              style={{ fontFamily: 'var(--font-dancing-script)', color: '#7A6A50' }}
             >
               — {senderName}
             </p>

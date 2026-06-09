@@ -35,8 +35,8 @@ export default function WishBoard({ wishes: initialWishes, layouts }: Props) {
       <div className="flex flex-col items-center justify-center py-24 gap-4">
         <span className="text-6xl float">🌸</span>
         <p
-          className="text-2xl text-pink-400"
-          style={{ fontFamily: 'var(--font-dancing-script)' }}
+          className="text-2xl"
+          style={{ fontFamily: 'var(--font-dancing-script)', color: '#7A9E6A' }}
         >
           No wishes yet — be the first! ✨
         </p>
