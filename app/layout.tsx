@@ -17,7 +17,7 @@ const lato = Lato({
 })
 
 export const metadata: Metadata = {
-  title: "Happy Birthday, Immaculate! 🎀",
+  title: "Immaculate's Day! 🎀",
   description: "Leave a birthday wish for the birthday girl 🌸",
 }
 

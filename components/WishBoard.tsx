@@ -1,4 +1,5 @@
 'use client'
+import { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import StickyNote from './StickyNote'
 import type { Wish } from '@/lib/supabase'
@@ -14,14 +15,28 @@ type Props = {
   layouts: NoteLayout[]
 }
 
-export default function WishBoard({ wishes, layouts }: Props) {
+export default function WishBoard({ wishes: initialWishes, layouts }: Props) {
+  const [wishes, setWishes] = useState<Wish[]>(initialWishes)
+
+  async function handleSave(id: string, newName: string, newMessage: string) {
+    const res = await fetch(`/api/wishes/${id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sender_name: newName, message: newMessage }),
+    })
+    if (res.ok) {
+      const updated: Wish = await res.json()
+      setWishes((prev) => prev.map((w) => (w.id === id ? updated : w)))
+    }
+  }
+
   if (wishes.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-24 gap-4">
         <span className="text-6xl float">🌸</span>
         <p
-          className="text-2xl text-pink-400 font-dancing"
-          style={{ fontFamily: 'var(--font-dancing)' }}
+          className="text-2xl text-pink-400"
+          style={{ fontFamily: 'var(--font-dancing-script)' }}
         >
           No wishes yet — be the first! ✨
         </p>
@@ -35,6 +50,7 @@ export default function WishBoard({ wishes, layouts }: Props) {
         {wishes.map((wish, i) => (
           <StickyNote
             key={wish.id}
+            id={wish.id}
             senderName={wish.sender_name}
             message={wish.message}
             color={wish.color}
@@ -42,6 +58,7 @@ export default function WishBoard({ wishes, layouts }: Props) {
             xOffset={layouts[i]?.xOffset ?? 0}
             yOffset={layouts[i]?.yOffset ?? 0}
             delay={i * 0.06}
+            onSave={handleSave}
           />
         ))}
       </div>
