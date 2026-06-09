@@ -13,8 +13,8 @@ export default function WishForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (!name.trim() || !message.trim()) {
-      setError('Please fill in both your name and your wish 💕')
+    if (!message.trim()) {
+      setError('Please write a wish first 💕')
       return
     }
     setLoading(true)
@@ -85,7 +85,7 @@ export default function WishForm() {
               htmlFor="name"
               style={{ fontFamily: 'var(--font-dancing)', fontSize: '1.1rem', color: '#5A8A50' }}
             >
-              Your name ✨
+              Your name <span style={{ color: '#A8B898', fontSize: '0.85rem' }}>(optional)</span> ✨
             </label>
             <input
               id="name"

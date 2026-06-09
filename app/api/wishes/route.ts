@@ -22,11 +22,11 @@ export async function GET() {
 
 export async function POST(request: Request) {
   const body = await request.json()
-  const sender_name = body.sender_name?.trim()
+  const sender_name = body.sender_name?.trim() || 'A friend'
   const message = body.message?.trim()
 
-  if (!sender_name || !message) {
-    return NextResponse.json({ error: 'Name and message are required' }, { status: 400 })
+  if (!message) {
+    return NextResponse.json({ error: 'Message is required' }, { status: 400 })
   }
 
   const color = NOTE_COLORS[Math.floor(Math.random() * NOTE_COLORS.length)]
