@@ -19,6 +19,11 @@ const lato = Lato({
 export const metadata: Metadata = {
   title: "Immaculate's Day! 🎀",
   description: "Leave a birthday wish for the birthday girl 🌸",
+  icons: {
+    icon: '/immaculate.png',
+    shortcut: '/immaculate.png',
+    apple: '/immaculate.png',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
